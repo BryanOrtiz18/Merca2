@@ -15,6 +15,6 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "bootstrap-icons": "^1.13.1"
+        "bootstrap-icons": "^1.10.5"
     }
 }
