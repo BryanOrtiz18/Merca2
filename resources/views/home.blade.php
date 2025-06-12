@@ -125,7 +125,7 @@
                 </div>
                 <h3 class="card-title">Inventario</h3>
                 <p class="card-text">Ver todos los productos</p>
-                <a href="{{ route('login') }}" class="stretched-link"></a>
+                <a href="{{ route('Inventary.index') }}" class="stretched-link"></a>
             </div>
         </div>
     </div>
