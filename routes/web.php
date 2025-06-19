@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -14,25 +15,26 @@ use App\Http\Controllers\ReportController;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| Aquí defines las rutas web protegidas y públicas.
 |
 */
 
+// Ruta pública (sin auth)
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Rutas de autenticación (login, registro, etc)
 Auth::routes();
 
-// Agrupación con middleware 'auth'
+// Rutas protegidas por autenticación
 Route::middleware(['auth'])->group(function () {
+
     // Panel de control
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    // Productos
-    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    // CRUD completo para productos
+    Route::resource('products', ProductController::class);
 
     // Ventas
     Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
@@ -45,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Reportes
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+
+    // Inventario
+    Route::get('/inventary', [InventaryController::class, 'index'])->name('inventary.index');
 });
-    // Inventary
-    Route::get('/inventary', [InventaryController::class, 'index'])->name('Inventary.index');

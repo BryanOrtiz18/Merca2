@@ -125,7 +125,7 @@
                 </div>
                 <h3 class="card-title">Inventario</h3>
                 <p class="card-text">Ver todos los productos</p>
-                <a href="{{ route('Inventary.index') }}" class="stretched-link"></a>
+                <a href="{{ route('products.index') }}" class="stretched-link"></a>
             </div>
         </div>
     </div>
@@ -142,9 +142,9 @@
                      style="width: 70px; height: 70px;">
                     <i class="bi bi-cash-coin text-white" style="font-size: 2rem;"></i>
                 </div>
-                <h3 class="card-title">Punto de Venta</h3>
+                <h3 class="card-title">productos</h3>
                 <p class="card-text">Sistema de ventas rápido e intuitivo con control de inventario en tiempo real.</p>
-                <a href="{{ route('sales.index') }}" class="stretched-link"></a>
+                <a href="{{ route('products.index') }}" class="stretched-link"></a>
             </div>
         </div>
     </div>

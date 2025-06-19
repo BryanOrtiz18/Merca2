@@ -43,7 +43,7 @@
 
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Inventary.index') }}">
+                    <a class="nav-link" href="{{ route('products.index') }}">
                        <i class="bi bi-laptop-fill me-1"></i>Inventario
                     </a>
                 </li>

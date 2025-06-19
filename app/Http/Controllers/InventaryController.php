@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product; // Asegúrate de importar el modelo Product
 
 class InventaryController extends Controller
 {
     public function index()
     {
-        return view('Inventary.index'); // Asegúrate de que esta vista exista en resources/views/reports/index.blade.php
+    
+
     }
 }

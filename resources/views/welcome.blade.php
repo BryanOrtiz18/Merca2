@@ -110,15 +110,6 @@
                             <p class="text-center">¡En Merca2 encontrarás productos, 
                                 <br>precios justos y atención cercana, pensada para hacer tu día más fácil.!</p>
                             
-                            <!-- Botones de acción -->
-                            <div class="text-center mt-4">
-                                <a href="https://laravel.com/docs" class="btn btn-outline-primary mx-2">
-                                    Documentación
-                                </a>
-                                <a href="https://laracasts.com" class="btn btn-outline-secondary mx-2">
-                                    Laracasts
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,14 +120,7 @@
     <!-- ============================================ -->
     <!-- Pie de Página -->
     <!-- ============================================ -->
-    <footer class="bg-light py-4">
-        <div class="container text-center">
-            <div class="text-muted">
-                <!-- Mostrar versiones de Laravel y PHP -->
-                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-            </div>
-        </div>
-    </footer>
+
 
     <!-- Scripts -->
     <!-- MDBootstrap JS -->
