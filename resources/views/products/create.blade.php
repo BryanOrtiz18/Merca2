@@ -40,7 +40,7 @@
 
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('reports.index') }}">
+                    <a class="nav-link" href="{{ route('products.index') }}">
                       <i class="bi bi-box-seam-fill me-1"></i> Compras. P
                     </a>
                 </li>

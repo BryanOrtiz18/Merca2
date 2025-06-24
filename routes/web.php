@@ -9,6 +9,9 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\CompraController;
+use App\Http\Controllers\CotizacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +48,27 @@ Route::middleware(['auth'])->group(function () {
     // Traslados
     Route::get('/transfers', [TransferController::class, 'index'])->name('transfers.index');
 
-    // Reportes
-    Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
-
     // Inventario
     Route::get('/inventary', [InventaryController::class, 'index'])->name('inventary.index');
+
+// Proveedores
+Route::resource('proveedores', ProveedorController::class);
+
+// Compras (sin editar, actualizar ni eliminar)
+Route::resource('compras', CompraController::class)->except(['edit', 'update', 'destroy']);
+
+// Cotizaciones
+Route::resource('cotizaciones', CotizacionController::class);
+
+// Acciones adicionales de cotizaciones
+Route::post('cotizaciones/{cotizacion}/aprobar', [CotizacionController::class, 'aprobar'])
+    ->name('cotizaciones.aprobar');
+
+Route::post('cotizaciones/{cotizacion}/rechazar', [CotizacionController::class, 'rechazar'])
+    ->name('cotizaciones.rechazar');
+
+    
 });
+
+
+

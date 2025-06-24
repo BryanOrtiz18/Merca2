@@ -24,8 +24,8 @@
 
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('reports.index') }}">
-                      <i class="bi bi-box-seam-fill me-1"></i> Compras. P
+                    <a class="nav-link" href="{{ route('proveedores.index') }}">
+                      <i class="bi bi-box-seam-fill me-1"></i> Proveedores
                     </a>
                 </li>
 
@@ -118,7 +118,7 @@
                                     <form action="{{ route('products.destroy', $product) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este producto?')">
+                                        <button type="submit" class="btn btn-sm btn-danger" title="Eliminar" onclick="return confirm('¿Eliminar este producto?')">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </form>

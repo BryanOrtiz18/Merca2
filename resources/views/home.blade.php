@@ -100,7 +100,7 @@
         </div>
     </div>
 
-    <!-- Compras y Proveedores -->
+    <!-- Registrar Proveedores -->
     <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm feature-card position-relative">
             <div class="card-body text-center">
@@ -109,8 +109,8 @@
                     <i class="bi bi-box-seam-fill text-white" style="font-size: 2rem;"></i>
                 </div>
                 <h3 class="card-title">Compras y Proveedoress</h3>
-                <p class="card-text">Registrar compras realizadas y registra proveedore</p>
-                <a href="{{ route('reports.index') }}" class="stretched-link"></a>
+                <p class="card-text">Registra proveedores</p>
+                <a href="{{ route('proveedores.index') }}" class="stretched-link"></a>
             </div>
         </div>
     </div>
@@ -149,7 +149,7 @@
         </div>
     </div>
 
-    <!-- Reportes y Análisis -->
+    <!-- Registrar Compras Realizadas -->
     <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm feature-card position-relative">
             <div class="card-body text-center">
@@ -157,9 +157,9 @@
                      style="width: 70px; height: 70px;">
                     <i class="bi bi-bar-chart-line-fill text-white" style="font-size: 2rem;"></i>
                 </div>
-                <h3 class="card-title">Reportes y Análisis</h3>
-                <p class="card-text"> Reportes filtrables por día/semana/mes</p>
-                <a href="{{ route('reports.index') }}" class="stretched-link"></a>
+                <h3 class="card-title">Registrar Compras Realizadas</h3>
+                <p class="card-text"> Registra las compras</p>
+                <a href="{{ route('proveedores.index') }}" class="stretched-link"></a>
             </div>
         </div>
     </div>
@@ -207,7 +207,7 @@
                 </div>
                 <h3 class="card-title">Reportes Avanzados</h3>
                 <p class="card-text">Genera reportes detallados de ventas, inventario y ganancias.</p>
-                <a href="{{ route('reports.index') }}" class="stretched-link"></a>
+                <a href="{{ route('proveedores.index') }}" class="stretched-link"></a>
             </div>
         </div>
     </div>
