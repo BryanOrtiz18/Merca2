@@ -30,7 +30,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="{{ url('/') }}">
+            <a class="navbar-brand fw-bold" href="{{ url('/home') }}">
                 <i class="fas fa-store-alt me-2"></i> MERCA2  
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
@@ -93,9 +93,9 @@
                     <i class="bi bi-cash-coin text-white" style="font-size: 2rem;"></i>
                     
                 </div>
-                <h3 class="card-title">Ventas y Registros</h3>
+                <h3 class="card-title">Registrar Ventas Realizadas</h3>
                 <p class="card-text">Registro de todas las ventas realizadas</p>
-                <a href="{{ route('sales.index') }}" class="stretched-link"></a>
+                <a href="{{ route('ventas.index') }}" class="stretched-link"></a>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
                      style="width: 70px; height: 70px;">
                     <i class="bi bi-box-seam-fill text-white" style="font-size: 2rem;"></i>
                 </div>
-                <h3 class="card-title">Compras y Proveedoress</h3>
+                <h3 class="card-title">Regristro De Proveedores</h3>
                 <p class="card-text">Registra proveedores</p>
                 <a href="{{ route('proveedores.index') }}" class="stretched-link"></a>
             </div>
@@ -134,98 +134,9 @@
 
 
 
-    <!-- Punto de Venta -->
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm feature-card position-relative">
-            <div class="card-body text-center">
-                <div class="bg-primary bg-gradient rounded-circle d-inline-flex justify-content-center align-items-center mb-3"
-                     style="width: 70px; height: 70px;">
-                    <i class="bi bi-cash-coin text-white" style="font-size: 2rem;"></i>
-                </div>
-                <h3 class="card-title">productos</h3>
-                <p class="card-text">Sistema de ventas rápido e intuitivo con control de inventario en tiempo real.</p>
-                <a href="{{ route('products.index') }}" class="stretched-link"></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Registrar Compras Realizadas -->
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm feature-card position-relative">
-            <div class="card-body text-center">
-                <div class="bg-success bg-gradient rounded-circle d-inline-flex justify-content-center align-items-center mb-3"
-                     style="width: 70px; height: 70px;">
-                    <i class="bi bi-bar-chart-line-fill text-white" style="font-size: 2rem;"></i>
-                </div>
-                <h3 class="card-title">Registrar Compras Realizadas</h3>
-                <p class="card-text"> Registra las compras</p>
-                <a href="{{ route('proveedores.index') }}" class="stretched-link"></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Acceso Multiplataforma -->
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm feature-card position-relative">
-            <div class="card-body text-center">
-                <div class="bg-info bg-gradient rounded-circle d-inline-flex justify-content-center align-items-center mb-3"
-                     style="width: 70px; height: 70px;">
-                    <i class="bi bi-laptop-fill text-white" style="font-size: 2rem;"></i>
-                </div>
-                <h3 class="card-title">Acceso Multiplataforma</h3>
-                <p class="card-text">Accede desde cualquier dispositivo con navegador web.</p>
-                <a href="{{ route('login') }}" class="stretched-link"></a>
-            </div>
-        </div>
-    </div>
-
 
 
     
-    <!-- Punto de Venta -->
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm feature-card position-relative">
-            <div class="card-body text-center">
-                <div class="bg-primary bg-gradient rounded-circle d-inline-flex justify-content-center align-items-center mb-3"
-                     style="width: 70px; height: 70px;">
-                    <i class="bi bi-cash-coin text-white" style="font-size: 2rem;"></i>
-                </div>
-                <h3 class="card-title">Punto de Venta</h3>
-                <p class="card-text">Sistema de ventas rápido e intuitivo con control de inventario en tiempo real.</p>
-                <a href="{{ route('sales.index') }}" class="stretched-link"></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Reportes Avanzados -->
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm feature-card position-relative">
-            <div class="card-body text-center">
-                <div class="bg-success bg-gradient rounded-circle d-inline-flex justify-content-center align-items-center mb-3"
-                     style="width: 70px; height: 70px;">
-                    <i class="bi bi-bar-chart-line-fill text-white" style="font-size: 2rem;"></i>
-                </div>
-                <h3 class="card-title">Reportes Avanzados</h3>
-                <p class="card-text">Genera reportes detallados de ventas, inventario y ganancias.</p>
-                <a href="{{ route('proveedores.index') }}" class="stretched-link"></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Acceso Multiplataforma -->
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm feature-card position-relative">
-            <div class="card-body text-center">
-                <div class="bg-info bg-gradient rounded-circle d-inline-flex justify-content-center align-items-center mb-3"
-                     style="width: 70px; height: 70px;">
-                    <i class="bi bi-laptop-fill text-white" style="font-size: 2rem;"></i>
-                </div>
-                <h3 class="card-title">Acceso Multiplataforma</h3>
-                <p class="card-text">Accede desde cualquier dispositivo con navegador web.</p>
-                <a href="{{ route('login') }}" class="stretched-link"></a>
-            </div>
-        </div>
-    </div>
 
 
 

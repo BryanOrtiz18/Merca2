@@ -28,7 +28,13 @@
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="{{ route('products.index') }}">
-                       <i class="bi bi-laptop-fill me-1"></i>Inventario
+                       <i class="bi bi-laptop-fill me-1"></i>Inventario. P
+                    </a>
+                </li>
+                
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('products.index') }}">
+                       <i class="bi bi-laptop-fill me-1"></i>Registro. V
                     </a>
                 </li>
             <

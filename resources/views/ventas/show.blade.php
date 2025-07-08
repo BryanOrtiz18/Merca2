@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Ventas</title>
-    
-    <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- FontAwesome (si lo necesitas) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<!-- Bootstrap Icons 1.10.5 CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-</head>
-<body>
-   <!-- Navbar -->
+ <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="{{ url('/home') }}">
+        <a class="navbar-brand fw-bold" href="{{ url('/') }}">
             <i class="fas fa-store-alt me-2"></i> MERCA2  
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
@@ -36,8 +18,8 @@
 
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('reports.index') }}">
-                      <i class="bi bi-box-seam-fill me-1"></i> Compras. P
+                    <a class="nav-link" href="{{ route('products.index') }}">
+                      <i class="bi bi-box-seam-fill me-1"></i> Proveedores
                     </a>
                 </li>
 
@@ -76,12 +58,40 @@
     </div>
 </nav>
 
-    <div class="container mt-5">
-        <h1 class="mb-4">Historial de Ventas</h1>
-        <p>Aquí se mostrará el listado de ventas.</p>
+<br>
+@extends('layouts.app')
+
+@section('title', 'Detalle de Venta')
+
+@section('content')
+<div class="container">
+    <h2 class="mb-4">Detalle de la Venta #{{ str_pad($venta->id, 6, '0', STR_PAD_LEFT) }}</h2>
+
+    <div class="card mb-3">
+        <div class="card-header bg-light">
+            <strong>Información del Cliente</strong>
+        </div>
+        <div class="card-body">
+            <p><strong>Cliente:</strong> {{ $venta->cliente }}</p>
+            <p><strong>RUC:</strong> {{ $venta->ruc ?? 'N/D' }}</p>
+        </div>
     </div>
 
-    <!-- Bootstrap JS (opcional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <div class="card mb-3">
+        <div class="card-header bg-light">
+            <strong>Datos de la Venta</strong>
+        </div>
+        <div class="card-body">
+            <p><strong>Total:</strong> C$ {{ number_format($venta->total, 2) }}</p>
+            <p><strong>Fecha:</strong> {{ $venta->fecha }}</p>
+            <p><strong>Tipo de Pago:</strong> {{ $venta->tipo_pago }}</p>
+            <p><strong>Vendedor:</strong> {{ $venta->vendedor }}</p>
+            <p><strong>Productos:</strong> {{ $venta->productos }}</p>
+        </div>
+    </div>
+
+    <a href="{{ route('ventas.index') }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+</div>
+@endsection

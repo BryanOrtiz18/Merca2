@@ -12,6 +12,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\CompraController;
 use App\Http\Controllers\CotizacionController;
+use App\Http\Controllers\VentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,8 @@ use App\Http\Controllers\CotizacionController;
 
 // Ruta pública (sin auth)
 Route::get('/', function () {
-    return view('welcome');
-});
+    return redirect()->route('ventas.index');
+})->name('home');
 
 // Rutas de autenticación (login, registro, etc)
 Auth::routes();
@@ -51,24 +52,30 @@ Route::middleware(['auth'])->group(function () {
     // Inventario
     Route::get('/inventary', [InventaryController::class, 'index'])->name('inventary.index');
 
-// Proveedores
-Route::resource('proveedores', ProveedorController::class);
+    // Proveedores
+    Route::resource('proveedores', ProveedorController::class);
 
-// Compras (sin editar, actualizar ni eliminar)
-Route::resource('compras', CompraController::class)->except(['edit', 'update', 'destroy']);
+    // Compras (sin editar, actualizar ni eliminar)
+    Route::resource('compras', CompraController::class)->except(['edit', 'update', 'destroy']);
 
-// Cotizaciones
-Route::resource('cotizaciones', CotizacionController::class);
+    // Cotizaciones
+    Route::resource('cotizaciones', CotizacionController::class);
 
-// Acciones adicionales de cotizaciones
-Route::post('cotizaciones/{cotizacion}/aprobar', [CotizacionController::class, 'aprobar'])
-    ->name('cotizaciones.aprobar');
+    // Acciones adicionales de cotizaciones
+    Route::post('cotizaciones/{cotizacion}/aprobar', [CotizacionController::class, 'aprobar'])
+        ->name('cotizaciones.aprobar');
 
-Route::post('cotizaciones/{cotizacion}/rechazar', [CotizacionController::class, 'rechazar'])
-    ->name('cotizaciones.rechazar');
+    Route::post('cotizaciones/{cotizacion}/rechazar', [CotizacionController::class, 'rechazar'])
+        ->name('cotizaciones.rechazar');
 
-    
+    // Rutas resource para ventas
+    Route::resource('ventas', VentaController::class);
+
+    // Ruta adicional para reporte de ventas
+    Route::get('ventas/reporte/mensual', [VentaController::class, 'reporteMensual'])
+         ->name('ventas.reporte.mensual');
+
+    // Ruta para exportar a Excel
+    Route::get('ventas/exportar/excel', [VentaController::class, 'exportarExcel'])
+         ->name('ventas.exportar.excel');
 });
-
-
-
